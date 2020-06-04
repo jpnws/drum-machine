@@ -5,18 +5,17 @@ class DrumPad extends React.Component {
   }
 
   playPad() {
+    console.log(this.props.padName);
     document.getElementById(this.props.padName).play();
   }
 
   render() {
     let audioPath = "audio/" + this.props.padName + ".mp3";
-    console.log(audioPath);
+    let uniqueID = "pad" + this.props.padName;
     return (
-      <div>
-        <button className="drump-pad" onClick={this.playPad}>
-          {this.props.padName}
-        </button>
-        <audio id={this.props.padName} src={audioPath}></audio>
+      <div className="drum-pad" id={uniqueID} onClick={this.playPad}>
+        {this.props.padName}
+        <audio className="clip" id={this.props.padName} src={audioPath}></audio>
       </div>
     );
   }
@@ -31,7 +30,7 @@ class App extends React.Component {
     return (
       <div className="drum-platform">
         <div className="drum-machine-title">Drum Machine</div>
-        <div className="drump-pad-group">
+        <div className="drum-pad-group" id="display">
           <DrumPad padName="Q" />
           <DrumPad padName="W" />
           <DrumPad padName="E" />
