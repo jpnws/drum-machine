@@ -13,7 +13,9 @@ class DrumPad extends React.Component {
     console.log(audioPath);
     return (
       <div>
-        <button onClick={this.playPad}>{this.props.padName}</button>
+        <button className="drump-pad" onClick={this.playPad}>
+          {this.props.padName}
+        </button>
         <audio id={this.props.padName} src={audioPath}></audio>
       </div>
     );
@@ -27,16 +29,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <DrumPad padName="Q" />
-        <DrumPad padName="W" />
-        <DrumPad padName="E" />
-        <DrumPad padName="A" />
-        <DrumPad padName="S" />
-        <DrumPad padName="D" />
-        <DrumPad padName="Z" />
-        <DrumPad padName="X" />
-        <DrumPad padName="C" />
+      <div className="drum-platform">
+        <div className="drum-machine-title">Drum Machine</div>
+        <div className="drump-pad-group">
+          <DrumPad padName="Q" />
+          <DrumPad padName="W" />
+          <DrumPad padName="E" />
+          <DrumPad padName="A" />
+          <DrumPad padName="S" />
+          <DrumPad padName="D" />
+          <DrumPad padName="Z" />
+          <DrumPad padName="X" />
+          <DrumPad padName="C" />
+        </div>
       </div>
     );
   }
