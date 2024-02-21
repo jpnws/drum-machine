@@ -1,0 +1,21 @@
+.drumPlatform {
+  margin: 0 auto;
+}
+
+.drumMachineTitle {
+  padding: 1em;
+  font-size: 1.5rem;
+  font-family: "Russo One", sans-serif;
+  text-align: center;
+}
+
+.drumPadGroup {
+  grid-gap: 0.5rem;
+  display: grid;
+  grid-template-columns: 5rem 5rem 5rem;
+}
+
+.drumDisplay {
+  margin-top: 1rem;
+  text-align: center;
+}
